@@ -7,7 +7,8 @@ import Bookshelf from "./containers/Bookshelf";
 class App extends Component {
 
   state = {
-    books: []
+    books: [],
+    clickedBook: []
   }
   componentDidMount(){
     fetch("http://localhost:3005/books")
@@ -16,14 +17,23 @@ class App extends Component {
       books: books
     }))
   }
+  clickHandler = (val) => {
+    console.log('in app again', val)
+    this.setState({
+      clickedBook: [...this.state.clickedBook, val]
+    })
+  }
   // fetch complete 1
   render() {
     // check for fetch value
-    console.log(this)
+    console.log(this.state)
+
     return (
       <div className="book-container">
-        <BookList />
-        <Bookshelf />
+        
+        <BookList onClick={this.clickHandler}books={this.state.books}/>
+       
+        <Bookshelf clickedBook={this.state.clickedBook}/>
       </div>
     );
   }

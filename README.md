@@ -15,7 +15,7 @@ TO START: json-server --watch db.json
    "author": "F. Scott Fitzgerald",
    "img": "https://mppl.org/wp-content/uploads/0-214x300.jpg"
    } -->
-2. Render a list of books that show the book title and book img
+<!-- 2. Render a list of books that show the book title and book img -->
 3. Clicking on a book in the Book List should add it to the Book Shelf
 4. Clicking on a book in the Book Shelf should remove it from the Book Shelf
 5. Each book can only be added to Book Shelf one time (Book Shelf should not have duplicate books)
