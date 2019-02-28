@@ -1,11 +1,11 @@
 import React from "react";
 
-const Book = props => {
-  let { book, clickHandler } = props;
+const Book = (props) => {
+  let { title, clickHandler } = props;
   return (
     <div>
-      <h2>{/*Book Title*/}</h2>
-      {/* Render Book Image */}
+      <h2>{props.title}</h2>
+      {props.img}
     </div>
   );
 };
