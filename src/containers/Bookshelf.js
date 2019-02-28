@@ -1,11 +1,18 @@
 import React from "react";
-import Book from "../components/Book";
+import ShelfBook from "../components/ShelfBook";
 
-const Bookshelf = () => {
+const Bookshelf = props => {
+  const listBooks = props.books.map(book => (
+    <ShelfBook
+      key={book.id}
+      book={book}
+      removeShelfClickHandler={props.removeShelfClickHandler}
+    />
+  ));
   return (
     <div>
       <h1>Book Shelf</h1>
-      <ul>{/* Render Books */}</ul>
+      <ul>{listBooks}</ul>
     </div>
   );
 };

@@ -1,11 +1,11 @@
 import React from "react";
 
 const Book = props => {
-  let { book, clickHandler } = props;
+  let { title, img } = props.book;
   return (
-    <div>
-      <h2>{/*Book Title*/}</h2>
-      {/* Render Book Image */}
+    <div onClick={e => props.addToShelfClickHandler(props.book)}>
+      <h2>{title}</h2>
+      <img src={img} alt="book" />
     </div>
   );
 };
