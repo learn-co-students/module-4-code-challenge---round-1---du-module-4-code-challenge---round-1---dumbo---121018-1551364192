@@ -3,9 +3,9 @@ import React from "react";
 const Book = props => {
   let { book, clickHandler } = props;
   return (
-    <div onClick={() => clickHandler(book)}>
-      <h2>{book.title}</h2>
-      <img alt={book.title} src={book.img} />
+    <div>
+      <h2>{/*Book Title*/}</h2>
+      {/* Render Book Image */}
     </div>
   );
 };
