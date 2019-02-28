@@ -16,7 +16,7 @@ TO START: json-server --watch db.json
    "img": "https://mppl.org/wp-content/uploads/0-214x300.jpg"
    } -->
 <!-- 2. Render a list of books that show the book title and book img -->
-3. Clicking on a book in the Book List should add it to the Book Shelf
+<!-- 3. Clicking on a book in the Book List should add it to the Book Shelf -->
 4. Clicking on a book in the Book Shelf should remove it from the Book Shelf
 5. Each book can only be added to Book Shelf one time (Book Shelf should not have duplicate books)
 6. Add an input that allows the user to search in Book List for a book by title and still be able to add that book to the Book Shelf (as long as it hasn't already been added)

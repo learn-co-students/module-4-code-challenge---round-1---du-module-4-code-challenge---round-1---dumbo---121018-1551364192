@@ -12,6 +12,7 @@ let List = props.books.map((book) => {
   return <Book onClick={clickHandler}title={book.title} img={book.img}key={book.id}/>
 })
   return (
+ 
     <div className="book-list">
       <h1>Book List</h1>
       <ul>{List}</ul>

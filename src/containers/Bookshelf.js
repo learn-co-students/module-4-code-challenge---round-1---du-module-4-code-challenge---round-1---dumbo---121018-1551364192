@@ -2,10 +2,10 @@ import React from "react";
 import Book from "../components/Book";
 
 const Bookshelf = (props) => {
-  console.log(props)
+  console.log(props.clickedBook)
   let book = props.clickedBook.map((book) =>{
-    console.log(book)
-    return <Book key={book.id}title={book.title} img={book.img}/>
+    console.log(book,props)
+    return <Book  onClick={() =>props.onClick(book)} key={book.id}title={book.title} img={book.img}/>
   })
   return (
     <div>

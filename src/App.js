@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
+// import logo from "./logo.svg";
 import "./App.css";
 import BookList from "./containers/BookList";
 import Bookshelf from "./containers/Bookshelf";
@@ -8,7 +8,8 @@ class App extends Component {
 
   state = {
     books: [],
-    clickedBook: []
+    clickedBook: [],
+    removedBook: []
   }
   componentDidMount(){
     fetch("http://localhost:3005/books")
@@ -18,22 +19,30 @@ class App extends Component {
     }))
   }
   clickHandler = (val) => {
-    console.log('in app again', val)
+    // console.log('in app again', val)
+    console.log()
     this.setState({
       clickedBook: [...this.state.clickedBook, val]
     })
+    }
+    clickHandle = (book) => {
+console.log('removing',book)
+
+this.setState({
+  removedBook: book
+})
   }
   // fetch complete 1
   render() {
     // check for fetch value
-    console.log(this.state)
+    // console.log(this.state)
 
     return (
       <div className="book-container">
         
         <BookList onClick={this.clickHandler}books={this.state.books}/>
        
-        <Bookshelf clickedBook={this.state.clickedBook}/>
+        <Bookshelf onClick={this.clickHandle}clickedBook={this.state.clickedBook}/>
       </div>
     );
   }
