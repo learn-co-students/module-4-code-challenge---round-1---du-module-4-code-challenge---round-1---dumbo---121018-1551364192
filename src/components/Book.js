@@ -1,11 +1,15 @@
 import React from "react";
 
 const Book = (props) => {
-  let { title, clickHandler } = props;
+  let { book, clickHandler } = props;
+  console.log('PROPS',props.book.title);
+
+
+
   return (
     <div>
-      <h2>{props.title}</h2>
-      {props.img}
+      <h2>{props.book.title}</h2>
+      <img alt ="" src= {props.book.img}/>
     </div>
   );
 };
