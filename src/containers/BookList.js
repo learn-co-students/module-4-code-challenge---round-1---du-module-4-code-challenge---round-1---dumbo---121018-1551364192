@@ -9,14 +9,16 @@ const BookList = props => {
     ));
   };
 
-  let changeHandler = (value) => {
-  	this.state.value
+  let changeHandler = (e) => {
+	   props.searchHandler(e)
   };
-
+	
+	
+	
   return (
     <div className="book-list">
       <h1>Book List</h1>
-      <Search books={props.books} changeHandler={changeHandler} />
+      <Search books={props.books} changeHandler={changeHandler} value={props.value} />
 
       <ul>{bookRender()}</ul>
     </div>

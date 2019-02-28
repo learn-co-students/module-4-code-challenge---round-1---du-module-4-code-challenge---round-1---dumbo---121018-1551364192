@@ -27,16 +27,17 @@ class App extends Component {
   	this.setState({bookShelf: removed})
   }
   
-  searchHandler = ()=>{
-  	this.setState({searchTerm: null})
+  searchHandler = (e)=>{
+  	this.setState({searchTerm: e})
   }
 
+  
   render() {
   	// console.log(this.state.bookShelf)
     return (
       <div className="book-container">
-        <BookList books={this.state.books} clickHandler={this.clickHandler} />
-        <Bookshelf books={this.state.bookShelf} clickHandler={this.shelfClickHandler} />
+        <BookList books={this.state.books} clickHandler={this.clickHandler} value={this.state.searchTerm} searchHandler={this.searchHandler}/>
+        <Bookshelf books={this.state.bookShelf} clickHandler={this.shelfClickHandler} value={this.state.searchTerm} />
       </div>
     );
   }
