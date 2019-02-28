@@ -1,13 +1,17 @@
-import React from "react";
-import Book from "../components/Book";
+import React from "react"
+import Book from "../components/Book"
 
-const Bookshelf = () => {
+const Bookshelf = props => {
+  let booksMap = props.shelfBooks.map(book => (
+    <Book key={book.id} book={book} selectedBook={props.selectedBook} />
+  ))
+
   return (
     <div>
       <h1>Book Shelf</h1>
-      <ul>{/* Render Books */}</ul>
+      <ul>{booksMap}</ul>
     </div>
-  );
-};
+  )
+}
 
-export default Bookshelf;
+export default Bookshelf
