@@ -3,13 +3,15 @@ import logo from "./logo.svg";
 import "./App.css";
 import BookList from "./containers/BookList";
 import Bookshelf from "./containers/Bookshelf";
+import Search from "./components/Search";
 const URL = 'http://localhost:3005/books'
 class App extends Component {
 
 state ={
   books: [],
   filteredBooks:[],
-  searchTerm: ""
+  searchTerm: "",
+  clicked: false
 }
 
 
@@ -20,23 +22,27 @@ componentDidMount (){
   .then(books => this.setState({books}))
 }
 
-changeHandler= ()=>{
+changeHandler = e =>{
+  let newArray = [...this.state.books].filter(book =>
+    book.title.includes(e.target.value)
+  );
+  this.setState({
+searchTerm: e.target.value,
+filteredBooks: newArray
+});
 
 }
 
 
-
-clickHandler= ()=>{
-
-}
 
 
 
   render() {
     return (
       <div className="book-container">
-        <BookList books ={this.state.books}/>
+        <BookList clickHandler = {this.clickHandler} books ={this.state.books}/>
         <Bookshelf />
+        <Search changeHandler={this.changeHandler}/>
       </div>
     );
   }
