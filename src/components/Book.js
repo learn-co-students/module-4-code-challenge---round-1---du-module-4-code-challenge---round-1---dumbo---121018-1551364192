@@ -4,8 +4,8 @@ const Book = props => {
   let { book, clickHandler } = props;
   return (
     <div>
-      <h2>{/*Book Title*/}</h2>
-      {/* Render Book Image */}
+      <h2>{ book.title }</h2>
+      <img alt={ book.title } src={ book.img } onClick={ () => clickHandler(book) }/>
     </div>
   );
 };
