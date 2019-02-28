@@ -1,11 +1,12 @@
 import React from "react";
 import Book from "../components/Book";
 
-const Bookshelf = () => {
+const Bookshelf = props => {
+  let books = props.books.map(book => <Book key={book.id} book={book} clickHandler={props.clickHandler}/>)
   return (
     <div>
       <h1>Book Shelf</h1>
-      <ul>{/* Render Books */}</ul>
+      <ul>{books}</ul>
     </div>
   );
 };
