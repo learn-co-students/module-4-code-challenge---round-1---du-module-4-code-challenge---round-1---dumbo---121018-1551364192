@@ -3,7 +3,7 @@ import Book from "../components/Book";
 
 const Bookshelf = ({myShelf, deletionClickHandler}) => {
   const formatBooksToComponents = () => {
-    return myShelf.map(book => <Book book={book} clickHandler={deletionClickHandler}/>)
+    return myShelf.map(book => <Book book={book} key={book.id} clickHandler={deletionClickHandler}/>)
   }
 
   return (

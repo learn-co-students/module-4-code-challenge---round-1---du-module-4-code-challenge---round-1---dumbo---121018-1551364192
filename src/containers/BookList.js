@@ -30,8 +30,7 @@ class BookList extends Component {
   }
 
   formatBooksToComponents = () => {
-    // const newFilteredBooks = [...this.state.books].filter(book => book.title.toLowerCase().includes(this.state.searchTerm.toLowerCase()))
-    return this.state.filteredBooks.map(book => <Book book={book} clickHandler={this.props.clickHandler}/>)
+    return this.state.filteredBooks.map(book => <Book book={book} key={book.id} clickHandler={this.props.clickHandler}/>)
   }
 
   render() {
